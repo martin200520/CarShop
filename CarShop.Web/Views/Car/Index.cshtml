@@ -1,0 +1,49 @@
+﻿@using CarShop.Data.Entities
+@model List<Car>
+
+    <h1 style="font-size: 75px" class="text-center">OUR  CARS</h1><br />
+
+<table class="table">
+    <thead>
+        <tr style="font-size: 20px" class="table-dark">
+            <th scope="col">Id</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Model</th>
+            <th scope="col">Year</th>
+            <th scope="col">Price</th>
+            <th scope="col">HorsePower</th>
+            <th scope="col"></th>
+            <th scope="col">Actions</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var car in Model)
+        {
+            <tr style="font-size: 20px" class="table-light">
+                <td>@car.Id</td>
+                <td>@car.Brand</td>
+                <td>@car.Model</td>
+                <td>@car.Year</td>
+                <td>@car.Price$</td>
+                <td>@car.HorsePower hp</td>
+                <td>
+                    <a asp-controller="Car" asp-action="About">
+                        <input type="button" class="btn btn-dark" value="About" />
+                    </a>
+                </td>
+                <td>
+                    <a asp-controller="Car" asp-action="Edit" asp-route-carId="@car.Id">
+                        <input type="button" class="btn btn-dark" value="Edit"/>
+                    </a>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="d-grid gap-2">
+    <button style="font-size: 30px" class="btn btn-primary" type="button">+ Add a new car</button>
+</div>
