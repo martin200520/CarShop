@@ -35,7 +35,8 @@ namespace CarShop.Data.Concrete
 
         public Car GetCarById(int id)
         {
-            throw new NotImplementedException();
+            Car car = _context.cars.Find(id)!;
+            return car;
         }
 
         public void UpdateCar(Car car)

@@ -16,5 +16,11 @@ namespace CarShop.Web.Controllers
             var cars = _carRepository.GetAllCars().ToList();
             return View(cars);
         }
+
+        public IActionResult About(int carId)
+        {
+            var car = _carRepository.GetCarById(carId);
+            return View(car);
+        }
     }
 }

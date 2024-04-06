@@ -28,7 +28,7 @@
                 <td>@car.Price$</td>
                 <td>@car.HorsePower hp</td>
                 <td>
-                    <a asp-controller="Car" asp-action="About">
+                    <a asp-controller="Car" asp-action="About" asp-route-carId="@car.Id">
                         <input type="button" class="btn btn-dark" value="About" />
                     </a>
                 </td>
