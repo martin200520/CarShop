@@ -11,8 +11,8 @@ namespace CarShop.Data.Abstract
     {
         IEnumerable<Car> GetAllCars();
         Car GetCarById(int id);
-        void AddCar(Car car);
-        void UpdateCar(Car car);
+        Task AddCarAsync(Car car);
+        Task UpdateCarAsync(Car car);
         void DeleteCar(int id);
 
     }

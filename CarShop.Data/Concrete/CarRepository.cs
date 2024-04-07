@@ -17,9 +17,10 @@ namespace CarShop.Data.Concrete
             _context = context;
         }
         
-        public void AddCar(Car car)
+        public async Task AddCarAsync(Car car)
         {
-            throw new NotImplementedException();
+            await _context.AddAsync(car);
+            await _context.SaveChangesAsync();
         }
 
         public void DeleteCar(int id)
@@ -39,9 +40,11 @@ namespace CarShop.Data.Concrete
             return car;
         }
 
-        public void UpdateCar(Car car)
+        public async Task UpdateCarAsync(Car car)
         {
-            throw new NotImplementedException();
+            _context.cars.Update(car);
+
+            await _context.SaveChangesAsync();
         }
     }
 }
